@@ -1,0 +1,11 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    div{
+        font-size: 3em;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        color: pink;
+    }
+}

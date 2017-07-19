@@ -1,12 +1,18 @@
 import _ from 'lodash'
+import $ from 'jquery'
+import './index.scss'
+import jpg from './rebaQ1.jpg'
+
+var img1 = document.createElement("img");
+img1.src = jpg
+document.body.appendChild(img1);
 
 function component() {
-  var element = document.createElement('div');
+  var $div = $('<div/>')
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  $div.html( _.join(['Hello', 'Reba'], ' ') )
 
-  return element;
+  return $div
 }
 
-document.body.appendChild(component());
+$(document.body).append(component())
