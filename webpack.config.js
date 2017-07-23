@@ -1,4 +1,6 @@
 var path = require('path');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   // 入口 main.js
@@ -8,6 +10,20 @@ module.exports = {
     filename: 'bundle.js', // 输出所在的文件名
     path: path.resolve(__dirname, 'dist') // 输出所在的目录
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
+  },
+  plugins: [
+    new HtmlwebpackPlugin({
+      title: 'Webpack-demos',
+      filename: 'index.html'
+    }), // 这个插件是在发现没有html时自动生成一个
+    new OpenBrowserPlugin({
+      url: 'http://localhost:9000'
+    })
+  ], // 在运行完编译脚本后打开浏览器
   module: {
     loaders:[
       {
