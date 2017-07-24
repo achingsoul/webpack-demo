@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.js',
   // 输出
   output: {
-    filename: 'bundle.js', // 输出所在的文件名
+    filename: 'bundle-[hash].js', // 输出所在的文件名
     path: path.resolve(__dirname, 'dist') // 输出所在的目录
   },
   devServer: {
